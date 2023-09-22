@@ -60,15 +60,15 @@ Also if the admin does not want to search a book with a specific parameter he ca
 
 The images below show two of the cases (success, fail) described above.
 
-| <img align="center" src="img/adminSerachBookSuccess.png" alt ="search book (success)"> |
+| <img align="center" src="img/adminSearchBookSuccess.png" alt ="search book (success)"> |
 | :-----------------------------------------------------------------------------------: |
-|                          _Endpoint(success): /adminSearchBook _                          |
+|                          _Endpoint(success): /adminSearchBook_                          |
 
-| <img align="center" src="img/adminSerachBookFail.png" alt ="search book (fail)"> |
+| <img align="center" src="img/adminSearchBookFail.png" alt ="search book (fail)"> |
 | :--------------------------------------------------------------------------------: |
 |                          _Endpoint(fail): /adminSearchBook_                           |
 
-| <img align="center" src="img/adminSerachBookGetAllBooks.png" alt ="get all books"> |
+| <img align="center" src="img/adminSearchBookGetAllBooks.png" alt ="get all books"> |
 | :--------------------------------------------------------------------------------: |
 |                          _Endpoint(success): /adminSearchBook_                           |
 
