@@ -1,0 +1,50 @@
+{% extends 'baseAdmin.html' %} {% block content %}
+<h1>Insert Book</h1>
+    <form method="post">
+        <label for="date">Date</label>
+        <br>
+        <input type="text" name="date"
+               placeholder="date (format: dd/mm/yy)"
+               value="{{ request.form['date'] }}"></input>
+        <br>
+
+        <label for="title"> Title</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Title"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+        
+        <label for="author">Author</label>
+        <br>
+        <input type="text" name="author"
+               placeholder="author"
+               value="{{ request.form['author'] }}"></input>
+        <br>
+        
+        <label for="pages">Pages</label>
+        <br>
+        <input type="text" name="pages"
+               placeholder="Pages"
+               value="{{ request.form['pages'] }}"></input>
+        <br>
+
+        <label for="id">Abstract</label>
+        <br>
+        <input type="text" name="abstract"
+               placeholder="Abstract"
+               value="{{ request.form['abstract'] }}"></input>
+        <br>
+
+        <label for="id">Rent Days</label>
+        <br>
+        <input type="text" name="rentdays"
+               placeholder="Rent Days"
+               value="{{ request.form['rentdays'] }}"></input>
+        <br>
+
+        <button type="submit">Submit</button>
+    </form>
+    
+   
+{% endblock %}

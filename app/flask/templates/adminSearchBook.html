@@ -1,0 +1,59 @@
+{% extends 'baseAdmin.html' %} {% block content %}
+<h1>Admin Search Book</h1>
+<form method="post">
+    <label for="title">Title</label>
+    <br>
+   <input type="text" name="title"
+       placeholder="Book's Title"
+       value="{{ request.form['title']|default('', true) }}"></input>
+
+    <br>
+    <label for="isbn">ISBN</label>
+    <br>
+   <input type="text" name="_id"
+       placeholder="ISBN"
+       value="{{ request.form['_id']|default('', true) }}"></input>
+
+    <br>
+    <label for="destination">Author</label>
+    <br>
+    <input type="text" name="author"
+       placeholder="Book's Author"
+       value="{{ request.form['author']|default('', true) }}"></input>
+    <br>
+    <button type="submit">Submit</button>
+     <br>
+    <button type="submit" name="get_all_books" value="get_all_books">Get All Books</button>
+    <br>
+</form>
+<br>
+<table>
+    <thead>
+        <th>ISBN</th>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Availability</th>
+        <th>Abstract</th>
+        <th>Rent Days</th>
+
+
+    </thead>
+    <tbody>
+        {% for book in requestsDict['books'] %}
+        <tr>
+            <td>{{ book['_id'] }}</td>
+          <td>{{ book['date'] }}</td>
+          <td>{{ book['title'] }}</td>
+          <td>{{ book['author']}}</td>
+          <td>{{ book['pages'] }}</td>
+          <td>{{ book['avaliability']|int}}</td>
+            <td>{{ book['abstract'] }}</td>
+            <td>{{ book['rentdays'] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

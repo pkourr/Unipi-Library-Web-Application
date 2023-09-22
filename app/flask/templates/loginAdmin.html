@@ -1,0 +1,23 @@
+{% extends 'baseLogin.html' %} {% block content %}
+
+    <h1> Login administrator</h1>
+    <form method="post">
+        <label for="email">Email</label>
+        <br>
+        <input type="text" name="email"
+               placeholder="Email"
+               value="{{ request.form['email'] }}"></input>
+        <br>
+        <br>
+
+        <label for="password">Password</label>
+        <br>
+        <input type="text" name="password"
+               placeholder="Password"
+               value="{{ request.form['password'] }}"></input>
+        <br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}

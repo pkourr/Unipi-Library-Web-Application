@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+<h1>View Your Bookings</h1>
+<table>
+    <thead>
+        <th>Booking ID</th>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Publish Date</th>
+        <th>ISBN</th>
+        <th>Date of Booking</th>
+    </thead>
+    <tbody>
+        {% for booking in requestsDict['bookings'] %}
+        <tr>
+            <td>{{ booking['booking_id'] }}</td>
+            <td>{{ booking['title'] }}</td>
+            <td>{{ booking['author'] }}</td>
+            <td>{{ booking['date'] }}</td>
+            <td>{{ booking['ISBN'] }}</td>
+            <td>{{ booking['dateOfRent'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

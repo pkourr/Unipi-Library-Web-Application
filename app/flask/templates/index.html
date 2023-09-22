@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unipi Library</title>
+    <style>
+      nav a {
+        color: #d64161;
+        font-size: 3em;
+        margin-left: 50px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('user.login') }}">Login user</a>
+      <a href="{{ url_for('admin.loginAdmin') }}">Login administrator</a>
+    </nav>
+    <hr />
+  </body>
+</html>

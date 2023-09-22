@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .topnav {
+        overflow: hidden;
+        background-color: #293e6a;
+      }
+
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .topnav a.active {
+        background-color: #639bf1;
+        color: white;
+      }
+    </style>
+
+    <title>{% block title %}Unipi Library{% endblock %}</title>
+  </head>
+  <body>
+    <div class="topnav">
+      <a
+        class="{{requestsDict['actSearch']}}"
+        href="{{ url_for('user.searchBook')}}"
+        >Search book</a
+      >
+      <a
+        class="{{requestsDict['actBooking']}}"
+        href="{{ url_for('user.rentBook')}}"
+        >Rent Book</a
+      >
+
+      <a
+        class="{{requestsDict['actOrderedDate']}}"
+        href="{{ url_for('user.viewBookings')}}"
+        >View bookings</a
+      >
+      <a
+        class="{{requestsDict['actOrderedCost']}}"
+        href="{{ url_for('user.returnBook')}}"
+        >Return Book</a
+      >
+
+      <a
+        class="{{requestsDict['actDeactivation']}}"
+        href="{{ url_for('user.deactivateAccount')}}"
+        >Deactivate account</a
+      >
+      <a class="" href="{{ url_for('user.logout')}}">Logout</a>
+    </div>
+    <div class="container">{% block content %} {% endblock %}</div>
+
+    <div class="message" , style="visibility:{{requestsDict['visMessage']}} ;">
+      {{requestsDict['message']}}
+    </div>
+
+    <div class="error" style="visibility:{{requestsDict['visError']}} ;">
+      <div class="alert" style="background-color: #d6dcea; color: red">
+        {{ get_flashed_messages()[-1] }}
+      </div>
+    </div>
+  </body>
+</html>

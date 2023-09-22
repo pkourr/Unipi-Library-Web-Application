@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unipi Library</title>
+    <style>
+      nav a {
+        color: #d64161;
+        background-color: rgb(150, 222, 224);
+        font-size: 2em;
+        margin-left: 50px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('user.login') }}">Login user</a>
+      <a href="{{ url_for('admin.loginAdmin') }}">Login administrator</a>
+    </nav>
+    <div class="container">{% block content %} {% endblock %}</div>
+
+    <div class="error" style="visibility:{{requestsDict['visError']}} ;">
+      <div class="alert" style="background-color: #d6dcea; color: red">
+        {{ get_flashed_messages()[-1] }}
+      </div>
+    </div>
+  </body>
+</html>

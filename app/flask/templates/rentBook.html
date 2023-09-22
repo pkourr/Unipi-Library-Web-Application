@@ -1,0 +1,37 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Rent a Book</h1>
+<form method="post">
+    <label for="isbn">ISBN</label>
+    <input type="text" name="isbn" placeholder="ISBN" value="{{ request.form['isbn'] }}"></input>
+    <br>
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Name" value="{{ request.form['name'] }}"></input>
+    <br>
+    <label for="surname">Surname</label>
+    <input type="text" name="surname" placeholder="Surname" value="{{ request.form['surname'] }}"></input>
+    <br>
+    <label for="phone">Phone</label>
+    <input type="text" name="phone" placeholder="Phone" value="{{ request.form['phone'] }}"></input>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+<table>
+    <thead>
+        <th>ISBN</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Phone</th>
+        <th>Date of Rent</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ requestsDict['booking']['ISBN'] }}</td>
+            <td>{{ requestsDict['booking']['name'] }}</td>
+            <td>{{ requestsDict['booking']['surname'] }}</td>
+            <td>{{ requestsDict['booking']['phone'] }}</td>
+            <td>{{ requestsDict['booking']['dateOfRent'] }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

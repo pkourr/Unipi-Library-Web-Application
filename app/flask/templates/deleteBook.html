@@ -1,0 +1,15 @@
+{% extends 'baseAdmin.html' %} {% block content %}
+<h1>Delete Book</h1>
+<form method="post">
+        <label for="bookId">Book's Id</label>
+        <br>
+        <input type="text" name="bookId"
+               placeholder="Book's Id"
+               value="{{ request.form['bookId'] }}"></input>
+        <br>
+    
+        <button type="submit">Submit</button>
+    </form>
+
+
+{% endblock %}
